@@ -5,6 +5,7 @@
        function destroy() {
          var player = document.querySelector('.vdb_player').vdb_Player;
          player.destroy();
+         document.body.removeChild(document.querySelector('.vdb_player'));
        }
        
        function create() {
