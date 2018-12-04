@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <script>
+       function destroy() {
+         var player = document.querySelector('.vdb_player').vdb_Player;
+         player.destroy();
+       }
+       
+       function create() {
+         var div = document.createElement('div');
+         div.id = "5c03d1a6f34478142d0b6d1f";
+         div.className = "vdb_player vdb_5c03d1a6f34478142d0b6d1f545db032e4b0af1a81424b48";
+         var scriptElement = document.createElement('script');
+         scriptElement.type = "text/javascript";
+         scriptElement.src = "//delivery.vidible.tv/jsonp/pid=5c03d1a6f34478142d0b6d1f/545db032e4b0af1a81424b48.js";
+         div.appendChild(scriptElement);
+         document.body.appendChild(div);
+         
+       }
+     </script>
+   </head>
+
+   <body>
+
+<button onclick="destroy()">Destroy</button>
+<button onclick="create()">Create</button>
+
+
+
+</body>
+
+</html>
