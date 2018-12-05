@@ -2,13 +2,15 @@
 <html>
    <head>
      <script>
-       function destroy() {
-         var player = document.querySelector('.vdb_player').vdb_Player;
+         var count = 0;
+       function destroy(playerWrapper) {
+         var player = playerWrapper.vdb_Player;
          player.destroy();
-         document.body.removeChild(document.querySelector('.vdb_player'));
+         document.body.removeChild(playerWrapper);
        }
        
        function create() {
+           count++;
          var div = document.createElement('div');
          div.id = "5c03d1a6f34478142d0b6d1f";
          div.className = "vdb_player vdb_5c03d1a6f34478142d0b6d1f545db032e4b0af1a81424b48";
@@ -16,7 +18,14 @@
          scriptElement.type = "text/javascript";
          scriptElement.src = "//delivery.vidible.tv/jsonp/pid=5c03d1a6f34478142d0b6d1f/545db032e4b0af1a81424b48.js";
          div.appendChild(scriptElement);
-         document.body.appendChild(div);
+
+        var button = document.createElement('button');
+        button.onclick = destroy.bind(div);
+        button.value = `Destroy player ${count}`;
+       
+        document.body.appendChild(button);
+        document.body.appendChild(div);
+
          
        }
      </script>
@@ -24,7 +33,6 @@
 
    <body>
 
-<button onclick="destroy()">Destroy</button>
 <button onclick="create()">Create</button>
 
 
