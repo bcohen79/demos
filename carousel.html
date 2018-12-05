@@ -20,8 +20,8 @@
          div.appendChild(scriptElement);
 
         var button = document.createElement('button');
-        button.onclick = destroy.bind(div);
-        button.value = `Destroy player ${count}`;
+        button.onclick = destroy.bind(this, div);
+        button.innerText = `Destroy player ${count}`;
        
         document.body.appendChild(button);
         document.body.appendChild(div);
